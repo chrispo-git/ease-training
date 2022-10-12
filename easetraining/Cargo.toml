@@ -1,0 +1,24 @@
+[package]
+name = "training_ease"
+version = "1.0.0"
+authors = ["chrispo", "wuboy", "claude"]
+edition = "2018"
+
+[package.metadata.skyline]
+titleid = "01006A800016E000"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+skyline = { git = "https://github.com/ultimate-research/skyline-rs.git" }
+acmd = { git = "https://github.com/ultimate-research/skyline-acmd.git" }
+skyline_smash = { git = "https://github.com/ultimate-research/skyline-smash.git", features = ["weak_l2cvalue"] }
+
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
